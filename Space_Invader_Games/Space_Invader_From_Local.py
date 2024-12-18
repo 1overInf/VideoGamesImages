@@ -41,7 +41,7 @@ GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 
 #Load background image
-bg = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/space.png').convert_alpha()
+bg = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/space.png').convert_alpha()
 
 #Function for drawing background
 def draw_bg():
@@ -64,7 +64,7 @@ class Spaceship(pygame.sprite.Sprite):
     def __init__(self, x, y, health):
         pygame.sprite.Sprite.__init__(self)
         #Import spaceship image
-        spaceshipp = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/spaceship.png')
+        spaceshipp = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/spaceship.png')
         #Scale spaceship image
         self.image = pygame.transform.scale(spaceshipp, (60, 60))
         #self.image = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/spaceship.png')
@@ -119,7 +119,7 @@ class Spaceship(pygame.sprite.Sprite):
 class Bullets(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        beam = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/beam1.png')
+        beam = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/beam1.png')
         #Scales beam1.png. Use (x, y) to control size length, width
         self.image = pygame.transform.scale(beam, (10, 30))
         #self.image = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/beam1.png')
@@ -146,7 +146,7 @@ class Aliens(pygame.sprite.Sprite):
        ## self.image = pygame.image.load("C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/alien" + str(random.randint(1, 2)) + ".png")
         #img = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/character.png')
         #self.image = pygame.transform.scale(img, (47, 99))
-        img = pygame.image.load("C:/Users/arman/PycharmProjects/VideoGamesImages/alien" + str(random.randint(1, 5)) + ".png")
+        img = pygame.image.load("C:/Users/arman/PycharmProjects/VideoGamesImages/Images/alien" + str(random.randint(1, 5)) + ".png")
         self.image = pygame.transform.scale(img, (49, 49))
         self.rect = self.image.get_rect()
         self.rect.center = [x, y]
@@ -162,7 +162,7 @@ class Aliens(pygame.sprite.Sprite):
 class Alien_Bullets(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        beam = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/beam1.png')
+        beam = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/beam1.png')
         #Scales beam1.png. Use (x, y) to control size length, width
         self.image = pygame.transform.scale(beam, (10, 30))
         #self.image = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/beam1.png')
@@ -191,7 +191,7 @@ class Explosion(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
         for num in range(1, 6):
-            img = pygame.image.load(f"C:/Users/arman/PycharmProjects/VideoGamesImages/exp{num}.png")
+            img = pygame.image.load(f"C:/Users/arman/PycharmProjects/VideoGamesImages/Images/exp{num}.png")
             #if the size
             if size == 1:
                 img = pygame.transform.scale(img, (20, 20))

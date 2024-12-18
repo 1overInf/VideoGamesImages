@@ -44,7 +44,7 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 # Load space background image from GitHub
-space_url = "https://raw.githubusercontent.com/1overInf/VideoGamesImages/main/space.png"
+space_url = "https://github.com/1overInf/VideoGamesImages/blob/09255195aed58a45bd492136e2435437f6ace999/Images/space.png"
 response = requests.get(space_url)
 space_data = response.content
 pil_space = Image.open(BytesIO(space_data))
@@ -89,7 +89,7 @@ def draw_text(text, font, text_col, x, y):
 #     last_alien_shot = pygame.time.get_ticks()
 
 # Load spaceship image from GitHub
-spaceship_url = "https://raw.githubusercontent.com/1overInf/VideoGamesImages/main/spaceship.png"
+spaceship_url = "https://github.com/1overInf/VideoGamesImages/blob/09255195aed58a45bd492136e2435437f6ace999/Images/spaceship.png"
 response = requests.get(spaceship_url)
 spaceship_data = response.content
 pil_spaceship = Image.open(BytesIO(spaceship_data))
@@ -149,15 +149,6 @@ class Spaceship(pygame.sprite.Sprite):
 
 
 
-
-# Load beam image from GitHub
-beam_url = "https://raw.githubusercontent.com/1overInf/VideoGamesImages/main/beam1.png"
-response = requests.get(beam_url)
-beam_data = response.content
-pil_beam = Image.open(BytesIO(beam_data))
-pil_beam = pil_beam.convert("RGBA")
-pygame_beam = pygame.image.fromstring(pil_beam.tobytes(), pil_beam.size, pil_beam.mode)
-
 # Now you can use `pygame_beam` as the image for the beam in your game
 
 class Bullets(pygame.sprite.Sprite):
@@ -165,7 +156,7 @@ class Bullets(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
 
         # Load the beam image from GitHub URL
-        beam_url = "https://raw.githubusercontent.com/1overInf/VideoGamesImages/main/beam1.png"
+        beam_url = "https://github.com/1overInf/VideoGamesImages/blob/09255195aed58a45bd492136e2435437f6ace999/Images/beam1.png"
         response = requests.get(beam_url)
         beam_data = response.content
 
@@ -207,28 +198,20 @@ from io import BytesIO
 from PIL import Image
 import pygame
 
-# Function to load alien image from GitHub
-def load_alien_image(alien_number):
-    alien_url = f"https://raw.githubusercontent.com/1overInf/VideoGamesImages/main/alien{alien_number}.png"
-    response = requests.get(alien_url)
-    alien_data = response.content
-    pil_alien = Image.open(BytesIO(alien_data))
-    pil_alien = pil_alien.convert("RGBA")
-    pygame_alien = pygame.image.fromstring(pil_alien.tobytes(), pil_alien.size, pil_alien.mode)
-    return pygame_alien
 
+            #Create aliens class
 class Aliens(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        alien_number = random.randint(1, 5)
-        # Load alien image from URL
-        img = load_alien_image(alien_number)
-        self.image = pygame.transform.scale(img, (49, 49))  # Scale the image to desired size
+       ## self.image = pygame.image.load("C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/alien" + str(random.randint(1, 2)) + ".png")
+        #img = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/character.png')
+        #self.image = pygame.transform.scale(img, (47, 99))
+        img = pygame.image.load("C:/Users/arman/PycharmProjects/VideoGamesImages/Images/alien" + str(random.randint(1, 5)) + ".png")
+        self.image = pygame.transform.scale(img, (49, 49))
         self.rect = self.image.get_rect()
         self.rect.center = [x, y]
         self.move_counter = 0
         self.move_direction = 1
-
     def update(self):
         self.rect.x += self.move_direction
         self.move_counter += 1
@@ -236,14 +219,10 @@ class Aliens(pygame.sprite.Sprite):
             self.move_direction *= -1
             self.move_counter *= self.move_direction
 
-import requests
-from io import BytesIO
-from PIL import Image
-import pygame
 
 # Function to load beam image from URL
 def load_beam_image():
-    beam_url = "https://raw.githubusercontent.com/1overInf/VideoGamesImages/main/beam1.png"
+    beam_url = "https://github.com/1overInf/VideoGamesImages/blob/09255195aed58a45bd492136e2435437f6ace999/Images/beam1.png"
     response = requests.get(beam_url)
     beam_data = response.content
     pil_beam = Image.open(BytesIO(beam_data))
@@ -282,7 +261,7 @@ class Explosion(pygame.sprite.Sprite):
     # Preload the images only once (possibly at the beginning of the game)
     explosion_images = []
     for num in range(1, 6):
-        img = pygame.image.load(f"C:/Users/arman/PycharmProjects/VideoGamesImages/exp{num}.png")
+        img = pygame.image.load(f"C:/Users/arman/PycharmProjects/VideoGamesImages/Images/exp{num}.png")
         explosion_images.append(img)
 
     def __init__(self, x, y, size):
