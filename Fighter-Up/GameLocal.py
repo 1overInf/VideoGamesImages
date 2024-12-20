@@ -45,18 +45,19 @@ WIZARD_DATA = [WIZARD_SIZE, WIZARD_SCALE, WIZARD_OFFSET]
 
 
 #load background image
-bg_image = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/forest.png').convert_alpha()
+bg_image = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/forest.png').convert_alpha()
 #bg_image= pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/csusb library.png.convert_alpha()
 #platform = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/platform.png').convert_alpha()
+# bg = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/space.png').convert_alpha()
 
 
 #load spritesheets
-warrior_sheet = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/warrior.png').convert_alpha()
-wizard_sheet = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/wizard.png').convert_alpha()
+warrior_sheet = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/warrior.png').convert_alpha()
+wizard_sheet = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/wizard.png').convert_alpha()
 
 
 #load victory image
-victory_img = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/victory.png').convert_alpha()
+victory_img = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/victory.png').convert_alpha()
 
 
 #define number of steps in each animation
@@ -64,8 +65,8 @@ WARRIOR_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
 WIZARD_ANIMATION_STEPS = [8, 8, 1, 8, 8, 3, 7]
 
 #define font
-count_font = pygame.font.Font('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/turok.ttf', 80)
-score_font = pygame.font.Font('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/turok.ttf', 80)
+count_font = pygame.font.Font('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/turok.ttf', 80)
+score_font = pygame.font.Font('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/turok.ttf', 80)
 
 #Function for drawing text
 def draw_text(text, font, text_col, x, y):
