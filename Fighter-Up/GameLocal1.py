@@ -1,10 +1,10 @@
 #https://www.youtube.com/watch?v=s5bd9KMSSW4&t=627s - citation
 #START OF PixalFighter.py
-# see hit boxes of character and attack
-
+# hidden hit box, countdown, multiplayer
+#Ready Player?
 import pygame
 
-from Fighter3 import Fighter
+from Fighter1 import Fighter
 pygame.init()
 
 SCREEN_WIDTH = 1000
@@ -27,7 +27,7 @@ WHITE = (255, 255, 255)
 
 #define game variable
 #Count down in first match
-intro_count = 0 # make 0 or 3
+intro_count = 3 # make 0 or 3
 last_count_update = pygame.time.get_ticks()
 score = [0, 0] #player scores. [P1, P2]
 round_over = False
@@ -47,9 +47,8 @@ WIZARD_DATA = [WIZARD_SIZE, WIZARD_SCALE, WIZARD_OFFSET]
 
 #load background image
 bg_image = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/forest.png').convert_alpha()
-#bg_image= pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/csusb library.png.convert_alpha()
-#platform = pygame.image.load('C:/Users/005991267/OneDrive - California State University San Bernardino/Pictures/PyGame/platform.png').convert_alpha()
-# bg = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/space.png').convert_alpha()
+#bg_image= pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/csusb library.png').convert_alpha()
+#platform = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/platform.png').convert_alpha()
 
 
 #load spritesheets
@@ -147,7 +146,7 @@ while run:
         screen.blit(victory_img, (360, 150))
         if pygame.time.get_ticks() - round_over_time > ROUND_OVER_COOLDOWN:
             round_over = False
-            intro_count = 0 #make 0 or 3
+            intro_count = 4
             fighter_1 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS)
             fighter_2 = Fighter(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS)
 
@@ -163,4 +162,3 @@ while run:
 #Exit pygame
 pygame.quit()
 #END OF PixalFighter.py
-
