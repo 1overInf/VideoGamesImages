@@ -32,14 +32,14 @@ score = 0
 #C:/Users/arman/PycharmProjects/VideoGamesImages/Images/PyGame
 #example_image
 
-sky = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/sky.png')
+# sky = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/sky.png')
 skyy = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/skyy.jpg')
 skyyy = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/skyyy.png')
 
 character = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/character.png')
 
-chest = pygame.image.load('C:C:/Users/arman/PycharmProjects/VideoGamesImages/Images/chest.png')
-restart_img = pygame.image.load(('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/Start Button.png'))
+# chest = pygame.image.load('C:C:/Users/arman/PycharmProjects/VideoGamesImages/Images/chest.png')
+restart_img = pygame.image.load(('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/CHESS.png'))
 
 
 #FUnction
@@ -204,7 +204,7 @@ class Player():
         self.counter = 0
         img = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/character.png')
         self.image = pygame.transform.scale(img, (47, 99))
-        dead_img = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/ghost.png')
+        dead_img = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/Ghost.png')
         self.dead_img = pygame.transform.scale(dead_img, (47, 50))
 
         self.rect = self.image.get_rect()
@@ -373,7 +373,7 @@ class Coin(pygame.sprite.Sprite):
     def __init__(self, x, y):
 
         pygame.sprite.Sprite.__init__(self)
-        coin = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/Coin.png')
+        coin = pygame.image.load('C:/Users/arman/PycharmProjects/VideoGamesImages/Images/coin.png')
         self.image = pygame.transform.scale(coin, (47, 47))
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
